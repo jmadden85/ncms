@@ -224,8 +224,8 @@ The file structure is similar to that of the mean project itself
 
 **Server**
 
-Packages are registered in the **app.js** 
-Defines package name, version and `mean=true` in the **package.json**   
+Packages are registered in the **app.js**
+Defines package name, version and `mean=true` in the **package.json**
 
 All of the Server side code resides in the `/server` directory.
 
@@ -240,7 +240,7 @@ All of the Server side code resides in the `/server` directory.
 
 All of the Client side code resides in the `/public` directory.
 
-    public            
+    public
     --- assets        # Javascript/Css/Images (not aggregated)
     --- controllers   # Angular Controllers
     --- config        # Contains routing files
@@ -253,7 +253,7 @@ Files within public of the package can be accessed externally `/[package-name]/p
 
 ###Registering a Package
 
-In order for a Package to work it needs to be registered. By doing this you make package system aware that you are ready and that other packages are able to depend on you. The packages are registered from within `app.js` 
+In order for a Package to work it needs to be registered. By doing this you make package system aware that you are ready and that other packages are able to depend on you. The packages are registered from within `app.js`
 
 When registering you are required to declare all your dependencies in order for the package system to make them available to your package.
 
@@ -284,7 +284,7 @@ MEAN has 3 pre registered dependencies:
 Dependency injection allows you to declare what dependencies you require and rely on the package system to resolve all dependencies for you. Any package registered is automatically made available to anyone who would like to depend on them.
 
 Looking again at the registration example we can see that `MyPackage` depends on the `Tokens` and can make use of it full functionality including overriding it.
- 
+
 ```javascript
 // Example of registering the tokens package
 MyPackage.register(function(app, auth, database, Tokens) {
@@ -349,14 +349,14 @@ MyPackage.aggregateAsset('js','first.js',{global:true,  weight: -4, group: 'head
 ```
 
 >The line that gets loaded in your head.html calls the header group and injects the js you want to include first-
-> in packages/system/server/views/includes/head.html 
+> in packages/system/server/views/includes/head.html
 > <script type="text/javascript" src="/modules/aggregated.js?group=header"></script>
 
 ###Settings Object
 The settings object is a persistance object that is stored in the packages collection and allows for saving persistant information per package such as configuration options or admin settings for the package.
 
   Receives two arguments the first being the settings object the second is a callback function
-  
+
 ```javascript
 MyPackage.settings({'someSetting':'some value'}, function (err, settings) {
     // You will receive the settings object on success
@@ -496,7 +496,7 @@ Where "myPackage" is the name of your package.
 Once your package is in good shape and you want to share it with the world you can start the process of contributing it and submiting it so it can be included in the package repository.
 To contribute your package register to the network (see the section below) and run
 
-```bash 
+```bash
 $ mean register # register to the mean network (see below)
 $ cd <packages/custom/pkgName>
 $ mean publish
@@ -567,7 +567,7 @@ $ npm test
 > NOTE: Running Node.js applications in the __production__ environment enables caching, which is disabled by default in all other environments.
 
 ## Staying up to date
-After initializing a project, you'll see that the root directory of your project is already a git repository. MEAN uses git to download and update its own code. To handle its own operations, MEAN creates a remote called `upstream`. This way you can use git as you would in any other project. 
+After initializing a project, you'll see that the root directory of your project is already a git repository. MEAN uses git to download and update its own code. To handle its own operations, MEAN creates a remote called `upstream`. This way you can use git as you would in any other project.
 
 To update your MEAN app to the latest version of MEAN
 
@@ -636,3 +636,7 @@ $ heroku config:set NODE_ENV=production
 ## License
 We believe that mean should be free and easy to integrate within your existing projects so we chose [The MIT License](http://opensource.org/licenses/MIT)
 
+
+=======
+# ncms
+Node CMS built on MEAN stack
